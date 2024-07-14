@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException
-from database import SessionLocal, engine
+from .database import SessionLocal, engine
 from sqlalchemy.orm import Session
 from .schema import DeviceInfo, Configuration
 from . import crud, models
