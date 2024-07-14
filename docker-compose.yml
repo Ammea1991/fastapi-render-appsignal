@@ -10,6 +10,8 @@ services:
       - "8080:8080"
     depends_on:
       - db
+    environment:
+      - DATABASE_URL=postgresql://meahome_postgres_user:SXkSicAdQfG40H06i5bkwVb3pHWg37kp@dpg-cq9vj1lds78s739k1u10-a.oregon-postgres.render.com/meahome_postgres
 
   db:
     image: postgres:12.0-alpine
