@@ -1,13 +1,13 @@
-version: "3.8"
+version: "3.7"
 
 services:
-  nudges:
+  web:
     build: .
-    command: uvicorn app.main:app --host 0.0.0.0 --port 80
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8080
     volumes:
-      - .:/usr/src/personalised_nudges
+      - .:/app
     ports:
-      - 80:80
+      - "8080:8080"
     depends_on:
       - db
 
@@ -16,9 +16,9 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=meahome_postgres_user
-      - POSTGRES_PASSWORD=SXkSicAdQfG40H06i5bkwVb3pHWg37kp
-      - POSTGRES_DB=meahome_postgres
+      - POSTGRES_USER=ameazza
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=nudges
     expose:
       - 5432
 
